@@ -88,8 +88,6 @@ $(function() {
     // Test to ensure there is at least a single .entry element
     // within the .feed container.
     it('has been loaded', function(done) {
-      console.log(Date.now() + ': Initial Entries test');
-      console.log($('.feed').children());
       expect($('.feed').children().length).toBeGreaterThan(0);
       done();
     });
@@ -117,9 +115,6 @@ $(function() {
     // when a new feed is loaded.
     it('has been loaded', function(done) {
       setTimeout(function() {
-        console.log(Date.now() + ': New Feed test');
-        console.log(entryTexts);
-        console.log($('.feed').find('h2').text());
         expect($('.feed').find('h2').text()).not.toBe(entryTexts);
         done();
       }, 750);
@@ -127,7 +122,6 @@ $(function() {
 
     // Go back to initial feed when finish.
     afterAll(function() {
-      console.log(Date.now() + ': Test Complete');
       loadFeed(0);
     });
   });
