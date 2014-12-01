@@ -6,5 +6,4 @@ This web app testing is for the final project of Front-End Nanodegree at Udacity
 <br><i>This project was made with Jasmine framework</i>
 
 ## How it works
-When page is loaded, the test results will be displayed at the bottom of the page.<br>
-The test #6 and #7 might fail, please try refresh the page.
+When page loads, the test results will be displayed at the bottom of the page.<br>
