@@ -77,7 +77,7 @@ $(function() {
    */
   describe('Initial Entries', function() {
 
-    // Call loadFeed() for initial entries. Wait 0.1s for content to be loaded.
+    // Call loadFeed() for initial entries. Wait 0.25s for content to be loaded.
     beforeEach(function(done) {
       loadFeed(0);
       setTimeout(function() {
@@ -91,7 +91,7 @@ $(function() {
       setTimeout(function() {
         expect($('.feed').children().length).toBeGreaterThan(0);
         done();
-      }, 100);
+      }, 200);
     });
   });
 
@@ -110,7 +110,7 @@ $(function() {
         entryTexts = $('.feed').find('h2').text();
         loadFeed(1);
         done();
-      }, 500);
+      }, 600);
     });
 
     // Test to ensure that content is actually changed
@@ -119,7 +119,7 @@ $(function() {
       setTimeout(function() {
         expect($('.feed').find('h2').text()).not.toBe(entryTexts);
         done();
-      }, 750);
+      }, 850);
     });
 
     // Go back to initial feed when finish.
