@@ -122,7 +122,9 @@ $(function() {
 
     // Go back to initial feed when finish.
     afterAll(function() {
-      loadFeed(0);
+      setTimeout(function() {
+        loadFeed(0);
+      }, 100);
     });
   });
 }());
