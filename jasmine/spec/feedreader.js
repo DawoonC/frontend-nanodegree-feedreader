@@ -77,21 +77,16 @@ $(function() {
    */
   describe('Initial Entries', function() {
 
-    // Call loadFeed() for initial entries. Wait 0.25s for content to be loaded.
+    // Call loadFeed() for initial entries. loadFeed() function will call done() when it's done.
     beforeEach(function(done) {
-      loadFeed(0);
-      setTimeout(function() {
-        done();
-      }, 250);
+      loadFeed(0, done);
     });
 
     // Test to ensure there is at least a single .entry element
     // within the .feed container.
     it('has been loaded', function(done) {
-      setTimeout(function() {
-        expect($('.feed').children().length).toBeGreaterThan(0);
-        done();
-      }, 200);
+      expect($('.feed').children().length).toBeGreaterThan(0);
+      done();
     });
   });
 
@@ -102,31 +97,23 @@ $(function() {
   describe('New Feed Selection', function() {
     var entryTexts;
 
-    // Wait for "Initial Entries" test suite to complete
-    // and then store the content of the initial screen
+    // Store the content of the initial screen
     // then load the new feed.
     beforeEach(function(done) {
-      setTimeout(function() {
-        entryTexts = $('.feed').find('h2').text();
-        loadFeed(1);
-        done();
-      }, 600);
+      entryTexts = $('.feed').find('h2').text();
+      loadFeed(1, done);
     });
 
     // Test to ensure that content is actually changed
     // when a new feed is loaded.
     it('has been loaded', function(done) {
-      setTimeout(function() {
-        expect($('.feed').find('h2').text()).not.toBe(entryTexts);
-        done();
-      }, 850);
+      expect($('.feed').find('h2').text()).not.toBe(entryTexts);
+      done();
     });
 
     // Go back to initial feed when finish.
-    afterAll(function() {
-      setTimeout(function() {
-        loadFeed(0);
-      }, 100);
+    afterEach(function(done) {
+      loadFeed(0, done);
     });
   });
 }());
