@@ -5,6 +5,6 @@ This web app testing is for the final project of Front-End Nanodegree at Udacity
 <i>If you are interested in the result of this project, you can find at: http://dawoonc.github.io/frontend-nanodegree-feedreader</i>
 <br><i>This project was made with Jasmine framework</i>
 
-## How to use
+## How it works
 When page is loaded, the test results will be displayed at the bottom of the page.<br>
 The test #6 and #7 might fail, please try refresh the page.
