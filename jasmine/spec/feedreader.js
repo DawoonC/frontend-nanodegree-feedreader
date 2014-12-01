@@ -88,8 +88,10 @@ $(function() {
     // Test to ensure there is at least a single .entry element
     // within the .feed container.
     it('has been loaded', function(done) {
-      expect($('.feed').children().length).toBeGreaterThan(0);
-      done();
+      setTimeout(function() {
+        expect($('.feed').children().length).toBeGreaterThan(0);
+        done();
+      }, 100);
     });
   });
 
